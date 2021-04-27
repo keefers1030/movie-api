@@ -1,15 +1,17 @@
 /* eslint-disable no-console */
 const express = require('express')
-const movies = require('./movies')
+const { getAllMovies, getByTitle } = require('./controller/movieFunctions')
 
 const app = express()
 
-app.get('/', getAllMovies)
+app.get('/movies', getAllMovies)
 
-app.get('/:', getByTitle)
+app.get('/:title', getByTitle)
 
-app.get()
+// app.get('/:directors', getByDirector)
 
-app.listen(1337, () => {
-  console.log('Listening on port 1337...')
+const port = 1337
+
+app.listen(port, () => {
+  console.log(`Listening on http://localhost:${port}/movies...`)
 })
