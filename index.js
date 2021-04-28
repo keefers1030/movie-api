@@ -6,7 +6,7 @@ const app = express()
 
 app.get('/movies', getAllMovies)
 
-app.get('/:title', getByTitle)
+app.get('/movies/:title', getByTitle)
 
 // app.get('/:directors', getByDirector)
 
