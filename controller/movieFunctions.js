@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const movies = require('../movies')
 
 const getAllMovies = (req, res) => {
@@ -10,5 +11,16 @@ const getByTitle = (req, res) => {
   return res.send(foundTitle)
 }
 
+const getByDirector = (req, res) => {
+  const { director } = req.params
+  const searchDirectors = movies.find(director => director == '')
+  const foundDirectors = movies.filter((direct => direct.directors.toLowerCase().includes(searchDirectors)))
 
-module.exports = { getAllMovies, getByTitle }
+  console.log(searchDirectors)
+  console.log(foundDirectors)
+
+  return res.send(foundDirectors)
+}
+
+
+module.exports = { getAllMovies, getByTitle, getByDirector }

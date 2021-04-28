@@ -559,7 +559,7 @@ const movies = [{
   runTime: '118 mins',
   genres: ['Drama'],
 }, {
-  title: 'The lord Of The Rings: The Fellowship Of The Ring',
+  title: 'The Lord Of The Rings: The Fellowship Of The Ring',
   directors: ['Peter Jackson'],
   releaseDate: '12/19/2001',
   rating: 'PG-13',
