@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+const { response } = require('express')
 const movies = require('../movies')
 
 const getAllMovies = (req, res) => {
@@ -16,7 +17,21 @@ const getResult = (req, res) => {
 }
 
 const saveNewMovie = (req, res) => {
+  const {
+    directors, title, releaseDate, rating, runtime, genres
+  } = req.body
 
+  if (!directors || !title || !releaseDate || !rating || !runtime || !genres) {
+    return res.status(400).send('Not all fields are fille out. Please check your input again.')
+  }
+
+  const newMovie = {
+    directors, title, releaseDate, rating, runtime, genres
+  }
+
+  movies.push(newMovie)
+
+  return response.status(201).send(newMovie)
 }
 
 module.exports = { getAllMovies, getResult, saveNewMovie }
