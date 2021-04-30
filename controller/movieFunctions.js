@@ -16,4 +16,4 @@ const getResult = (req, res) => {
 }
 
 
-module.exports = { getAllMovies, getResult}
+module.exports = { getAllMovies, getResult }
