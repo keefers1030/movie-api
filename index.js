@@ -10,7 +10,11 @@ app.get('/movies/:result', getResult)
 
 app.get('/movies/:result', getResult)
 
-app.post('/', express.json(), saveNewMovie)
+app.post('/movies', express.json(), saveNewMovie)
+
+app.all('*', (req, res) => {
+  return res.sendStatus(404)
+})
 
 const port = 1337
 

@@ -18,20 +18,20 @@ const getResult = (req, res) => {
 
 const saveNewMovie = (req, res) => {
   const {
-    directors, title, releaseDate, rating, runtime, genres
+    title, directors, releaseDate, rating, runTime, genres
   } = req.body
 
-  if (!directors || !title || !releaseDate || !rating || !runtime || !genres) {
-    return res.status(400).send('Not all fields are fille out. Please check your input again.')
+  if (!title || !directors || !releaseDate || !rating || !runTime || !genres) {
+    return res.status(400).send('Not all fields are filled out. Please check your input again.')
   }
 
   const newMovie = {
-    directors, title, releaseDate, rating, runtime, genres
+    title, directors, releaseDate, rating, runTime, genres
   }
 
   movies.push(newMovie)
 
-  return response.status(201).send(newMovie)
+  return res.status(201).send(newMovie)
 }
 
 module.exports = { getAllMovies, getResult, saveNewMovie }
