@@ -15,5 +15,8 @@ const getResult = (req, res) => {
   return res.send(foundResult)
 }
 
+const saveNewMovie = (req, res) => {
 
-module.exports = { getAllMovies, getResult }
+}
+
+module.exports = { getAllMovies, getResult, saveNewMovie }
